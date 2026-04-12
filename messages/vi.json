@@ -1,0 +1,253 @@
+{
+    "nav": {
+        "pipeline": "Cách hoạt động",
+        "features": "Tính năng",
+        "architecture": "Tại sao ProbeAI",
+        "stack": "Tích hợp",
+        "getStarted": "Dùng miễn phí"
+    },
+    "hero": {
+        "badge": "Được 500+ đội QA tin dùng trên toàn cầu",
+        "title1": "Phát hành nhanh hơn.",
+        "title2": "Không lỗi nào sót.",
+        "subtitle": "Ngừng viết test script dễ vỡ. Mô tả cần test gì bằng ngôn ngữ tự nhiên — ProbeAI lo phần còn lại. Từ viết test đến thực thi đến phân tích lỗi, hoàn toàn tự động.",
+        "cta": "Dùng thử miễn phí",
+        "ctaSecondary": "Đặt lịch demo"
+    },
+    "stats": {
+        "s1": "10x",
+        "s1label": "Viết test nhanh hơn",
+        "s2": "95%",
+        "s2label": "Giảm bảo trì test",
+        "s3": "500+",
+        "s3label": "Đội nhóm sử dụng",
+        "s4": "24/7",
+        "s4label": "Chạy test tự động"
+    },
+    "pipeline": {
+        "label": "Cách hoạt động",
+        "title1": "Từ ý tưởng",
+        "title2": "đến tự tin phát hành",
+        "subtitle": "Bốn bước đơn giản. Không Selenium. Không Cypress. Không locator dễ vỡ. Chỉ mô tả test và để AI làm việc nặng.",
+        "steps": {
+            "compile": {
+                "label": "Mô tả",
+                "desc": "Viết test bằng tiếng Việt hoặc YAML"
+            },
+            "bind": {
+                "label": "Cấu hình",
+                "desc": "Kết nối môi trường & tài khoản"
+            },
+            "execute": {
+                "label": "Chạy",
+                "desc": "AI thực thi test trên trình duyệt thật"
+            },
+            "analyze": {
+                "label": "Báo cáo",
+                "desc": "Nhận phân tích lỗi chi tiết"
+            }
+        }
+    },
+    "features": {
+        "label": "Tính năng",
+        "title1": "Tất cả những gì đội QA",
+        "title2": "luôn mong muốn",
+        "subtitle": "Test đáng tin cậy mà không cần bảo trì. Xây dựng cho đội nhóm phát hành nhanh.",
+        "cards": [
+            {
+                "icon": "✍️",
+                "title": "Viết test bằng ngôn ngữ tự nhiên",
+                "desc": "Không cần code. Mô tả bước test bằng ngôn ngữ tự nhiên hoặc YAML đơn giản. Cả đội — QA, PM, designer — đều viết test được.",
+                "tag": "Không cần code"
+            },
+            {
+                "icon": "🎨",
+                "title": "Figma thành test chỉ 1 click",
+                "desc": "Import thiết kế Figma và tự động tạo kịch bản test. Mọi màn hình, mọi luồng — được test trước khi ship code.",
+                "tag": "Design-first"
+            },
+            {
+                "icon": "🔍",
+                "title": "Phân tích lỗi thông minh",
+                "desc": "Khi test fail, ProbeAI cho biết tại sao — bug thật, lỗi môi trường, hay test lỗi thời — kèm ảnh chụp và bằng chứng.",
+                "tag": "AI-powered"
+            },
+            {
+                "icon": "🔄",
+                "title": "Test tự phục hồi",
+                "desc": "UI thay đổi? ProbeAI tự thích nghi. Không còn test vỡ mỗi sprint. Tập trung ship, không sửa selector.",
+                "tag": "Không bảo trì"
+            },
+            {
+                "icon": "⚡",
+                "title": "Chạy song song quy mô lớn",
+                "desc": "Chạy hàng trăm test cùng lúc. Toàn bộ test suite trong vài phút thay vì hàng giờ. Mở rộng không lo hạ tầng.",
+                "tag": "Siêu nhanh"
+            },
+            {
+                "icon": "🔌",
+                "title": "Tích hợp quy trình sẵn có",
+                "desc": "Kết nối GitHub Actions, GitLab CI, Jenkins hoặc bất kỳ CI/CD nào. Slack alert, Jira ticket, dashboard — có sẵn.",
+                "tag": "Plug & play"
+            }
+        ]
+    },
+    "architecture": {
+        "label": "Tại sao ProbeAI",
+        "title1": "Ngừng bảo trì test.",
+        "title2": "Bắt đầu ship.",
+        "subtitle": "Test automation truyền thống đã lỗi thời. Bạn tốn nhiều thời gian sửa test hơn tìm bug. ProbeAI thay đổi điều đó.",
+        "rules": [
+            {
+                "ok": false,
+                "text": "<strong>QA truyền thống:</strong> Viết và bảo trì script Selenium/Cypress mất hàng tuần. Mỗi thay đổi UI là test vỡ."
+            },
+            {
+                "ok": true,
+                "text": "<strong>ProbeAI:</strong> Mô tả test bằng ngôn ngữ tự nhiên. AI xử lý selector, chờ đợi và thử lại. Test tự phục hồi khi UI thay đổi."
+            },
+            {
+                "ok": false,
+                "text": "<strong>QA truyền thống:</strong> Test fail thì đội mất hàng giờ debug — bug thật hay test flaky?"
+            },
+            {
+                "ok": true,
+                "text": "<strong>ProbeAI:</strong> AI phân tích mọi failure tự động — bug thật, lỗi config, hay test lỗi thời — kèm ảnh chụp và bằng chứng."
+            }
+        ],
+        "layers": [
+            {
+                "num": "1",
+                "name": "Viết test nhanh gấp 10 lần",
+                "tech": "so với viết script thủ công",
+                "color": "#00e5ff"
+            },
+            {
+                "num": "2",
+                "name": "Giảm 95% bảo trì",
+                "tech": "test tự phục hồi",
+                "color": "#7b61ff"
+            },
+            {
+                "num": "3",
+                "name": "Phân tích lỗi tức thì",
+                "tech": "AI-powered analysis",
+                "color": "#00ffa3"
+            },
+            {
+                "num": "4",
+                "name": "Cả đội cùng cộng tác",
+                "tech": "QA, Dev, PM, Design",
+                "color": "#ff8c00"
+            },
+            {
+                "num": "5",
+                "name": "Bảo mật cấp doanh nghiệp",
+                "tech": "SOC 2 · SSO · RBAC",
+                "color": "#ff4d6d"
+            },
+            {
+                "num": "6",
+                "name": "Tương thích mọi stack",
+                "tech": "Bất kỳ web app, bất kỳ framework",
+                "color": "#5eead4"
+            }
+        ]
+    },
+    "howItWorks": {
+        "label": "Bắt đầu",
+        "title1": "Chạy ngay",
+        "title2": "trong vài phút",
+        "subtitle": "Không cần setup phức tạp. Không cần onboarding dài dòng. Bắt đầu test ngay hôm nay.",
+        "steps": [
+            {
+                "num": "01",
+                "title": "Kết nối ứng dụng",
+                "text": "Trỏ ProbeAI đến URL staging hoặc production. Thêm biến môi trường và tài khoản test nếu cần — hoặc để AI tự phát hiện.",
+                "code": "target: https://app.yourcompany.com\naccount: ${accounts.test_user}\nenvironment: staging"
+            },
+            {
+                "num": "02",
+                "title": "Mô tả bài test",
+                "text": "Viết những gì bạn muốn test bằng ngôn ngữ tự nhiên. Không locator, không selector, không code. ProbeAI hiểu ý bạn và xử lý phần còn lại.",
+                "code": "steps:\n  - \"Đăng nhập với tư cách admin\"\n  - \"Tạo dự án mới\"\n  - \"Mời thành viên\"\n  - \"Kiểm tra email mời đã gửi\""
+            },
+            {
+                "num": "03",
+                "title": "Chạy & mở rộng tự động",
+                "text": "Thực thi test mỗi lần push, theo lịch, hoặc khi cần. Chạy toàn bộ test suite song song — hàng trăm test trong vài phút.",
+                "code": null
+            },
+            {
+                "num": "04",
+                "title": "Nhận báo cáo hành động",
+                "text": "Khi test fail, bạn nhận kết luận rõ ràng: bug thật hay cảnh báo giả. Ảnh chụp, log mạng, và gợi ý sửa — tất cả ở một nơi.",
+                "code": null
+            }
+        ]
+    },
+    "stack": {
+        "label": "Tích hợp",
+        "title1": "Hoạt động với công cụ",
+        "title2": "bạn đang dùng",
+        "items": [
+            {
+                "icon": "🐙",
+                "name": "GitHub Actions",
+                "detail": "Chạy test mỗi PR"
+            },
+            {
+                "icon": "🦊",
+                "name": "GitLab CI",
+                "detail": "Tích hợp pipeline"
+            },
+            {
+                "icon": "🎨",
+                "name": "Figma",
+                "detail": "Tự động test từ thiết kế"
+            },
+            {
+                "icon": "💬",
+                "name": "Slack",
+                "detail": "Cảnh báo lỗi tức thì"
+            },
+            {
+                "icon": "📋",
+                "name": "Jira",
+                "detail": "Tự tạo ticket bug"
+            },
+            {
+                "icon": "🔧",
+                "name": "Jenkins",
+                "detail": "Hỗ trợ CI/CD pipeline"
+            },
+            {
+                "icon": "📊",
+                "name": "Datadog",
+                "detail": "Giám sát & quan sát"
+            },
+            {
+                "icon": "🌐",
+                "name": "Mọi Web App",
+                "detail": "React, Vue, Angular, v.v."
+            }
+        ]
+    },
+    "cta": {
+        "title1": "Sẵn sàng giải quyết QA",
+        "title2": "một lần và mãi mãi?",
+        "subtitle": "Tham gia 500+ đội nhóm phát hành nhanh hơn với ProbeAI. Có gói miễn phí — không cần thẻ tín dụng.",
+        "primary": "Dùng thử miễn phí",
+        "secondary": "Liên hệ Sales"
+    },
+    "footer": {
+        "links": [
+            "Tài liệu",
+            "Bảng giá",
+            "Changelog",
+            "Trạng thái",
+            "Quyền riêng tư"
+        ],
+        "copy": "© 2025 ProbeAI. Xây dựng cho đội QA phát hành nhanh."
+    }
+}

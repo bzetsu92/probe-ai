@@ -1,0 +1,253 @@
+{
+    "nav": {
+        "pipeline": "How It Works",
+        "features": "Features",
+        "architecture": "Why ProbeAI",
+        "stack": "Integrations",
+        "getStarted": "Start Free"
+    },
+    "hero": {
+        "badge": "Trusted by 500+ QA teams worldwide",
+        "title1": "Ship faster.",
+        "title2": "Break nothing.",
+        "subtitle": "Stop writing brittle test scripts. Describe what to test in plain language — ProbeAI handles the rest. From authoring to execution to failure analysis, fully automated.",
+        "cta": "Start free trial",
+        "ctaSecondary": "Book a demo"
+    },
+    "stats": {
+        "s1": "10x",
+        "s1label": "Faster test creation",
+        "s2": "95%",
+        "s2label": "Less test maintenance",
+        "s3": "500+",
+        "s3label": "Teams using ProbeAI",
+        "s4": "24/7",
+        "s4label": "Automated test runs"
+    },
+    "pipeline": {
+        "label": "How It Works",
+        "title1": "From idea",
+        "title2": "to confidence",
+        "subtitle": "Four simple steps. No Selenium. No Cypress scripts. No flaky locators. Just describe your test and let AI do the heavy lifting.",
+        "steps": {
+            "compile": {
+                "label": "Describe",
+                "desc": "Write tests in plain English or YAML"
+            },
+            "bind": {
+                "label": "Configure",
+                "desc": "Connect your environments & accounts"
+            },
+            "execute": {
+                "label": "Run",
+                "desc": "AI executes tests in real browsers"
+            },
+            "analyze": {
+                "label": "Report",
+                "desc": "Get actionable failure analysis"
+            }
+        }
+    },
+    "features": {
+        "label": "Features",
+        "title1": "Everything your QA team",
+        "title2": "has been asking for",
+        "subtitle": "Reliable tests without the maintenance nightmare. Built for teams who ship fast.",
+        "cards": [
+            {
+                "icon": "✍️",
+                "title": "Write Tests in Plain Language",
+                "desc": "No code required. Describe test steps in natural language or simple YAML. Your entire team — QA, PM, even designers — can write tests.",
+                "tag": "No-code"
+            },
+            {
+                "icon": "🎨",
+                "title": "Figma to Tests in One Click",
+                "desc": "Import your Figma designs and auto-generate test scenarios. Every screen, every flow — tested before a single line of code ships.",
+                "tag": "Design-first"
+            },
+            {
+                "icon": "🔍",
+                "title": "Smart Failure Analysis",
+                "desc": "When a test fails, ProbeAI tells you why — real bug, environment issue, or test drift — with screenshots and evidence. No more guessing.",
+                "tag": "AI-powered"
+            },
+            {
+                "icon": "🔄",
+                "title": "Self-Healing Tests",
+                "desc": "UI changed? ProbeAI adapts automatically. No more broken tests every sprint. Focus on shipping, not fixing selectors.",
+                "tag": "Zero maintenance"
+            },
+            {
+                "icon": "⚡",
+                "title": "Parallel Execution at Scale",
+                "desc": "Run hundreds of tests simultaneously. Full test suite in minutes, not hours. Scale without worrying about infrastructure.",
+                "tag": "Blazing fast"
+            },
+            {
+                "icon": "🔌",
+                "title": "Fits Your Workflow",
+                "desc": "Plug into GitHub Actions, GitLab CI, Jenkins, or any CI/CD. Get Slack alerts, Jira tickets, and team dashboards out of the box.",
+                "tag": "Plug & play"
+            }
+        ]
+    },
+    "architecture": {
+        "label": "Why ProbeAI",
+        "title1": "Stop maintaining tests.",
+        "title2": "Start shipping.",
+        "subtitle": "Traditional test automation is broken. You spend more time fixing tests than finding bugs. ProbeAI changes that.",
+        "rules": [
+            {
+                "ok": false,
+                "text": "<strong>Traditional QA:</strong> Writing and maintaining Selenium/Cypress scripts takes weeks. Every UI change breaks tests."
+            },
+            {
+                "ok": true,
+                "text": "<strong>ProbeAI:</strong> Describe tests in plain language. AI handles selectors, waits, and retries. Tests self-heal when UI changes."
+            },
+            {
+                "ok": false,
+                "text": "<strong>Traditional QA:</strong> When tests fail, your team spends hours debugging — is it a real bug or a flaky test?"
+            },
+            {
+                "ok": true,
+                "text": "<strong>ProbeAI:</strong> AI triages every failure automatically — real bug, config issue, or test drift — with screenshots and evidence."
+            }
+        ],
+        "layers": [
+            {
+                "num": "1",
+                "name": "10x faster test authoring",
+                "tech": "vs. manual scripting",
+                "color": "#00e5ff"
+            },
+            {
+                "num": "2",
+                "name": "95% less maintenance",
+                "tech": "self-healing tests",
+                "color": "#7b61ff"
+            },
+            {
+                "num": "3",
+                "name": "Instant failure triage",
+                "tech": "AI-powered analysis",
+                "color": "#00ffa3"
+            },
+            {
+                "num": "4",
+                "name": "Full team collaboration",
+                "tech": "QA, Dev, PM, Design",
+                "color": "#ff8c00"
+            },
+            {
+                "num": "5",
+                "name": "Enterprise-grade security",
+                "tech": "SOC 2 · SSO · RBAC",
+                "color": "#ff4d6d"
+            },
+            {
+                "num": "6",
+                "name": "Works with your stack",
+                "tech": "Any web app, any framework",
+                "color": "#5eead4"
+            }
+        ]
+    },
+    "howItWorks": {
+        "label": "Getting Started",
+        "title1": "Up and running",
+        "title2": "in minutes",
+        "subtitle": "No complex setup. No lengthy onboarding. Start testing today.",
+        "steps": [
+            {
+                "num": "01",
+                "title": "Connect your app",
+                "text": "Point ProbeAI to your staging or production URL. Add environment variables and test accounts if needed — or let AI discover them.",
+                "code": "target: https://app.yourcompany.com\naccount: ${accounts.test_user}\nenvironment: staging"
+            },
+            {
+                "num": "02",
+                "title": "Describe your tests",
+                "text": "Write what you want to test in plain language. No locators, no selectors, no code. ProbeAI understands your intent and handles the rest.",
+                "code": "steps:\n  - \"Log in as admin\"\n  - \"Create a new project\"\n  - \"Invite team member\"\n  - \"Verify invitation email sent\""
+            },
+            {
+                "num": "03",
+                "title": "Run & scale automatically",
+                "text": "Execute tests on every push, on a schedule, or on-demand. Run your entire suite in parallel — hundreds of tests in minutes.",
+                "code": null
+            },
+            {
+                "num": "04",
+                "title": "Get actionable reports",
+                "text": "When tests fail, you get a clear verdict: real bug or false alarm. Screenshots, network logs, and suggested fixes — all in one place.",
+                "code": null
+            }
+        ]
+    },
+    "stack": {
+        "label": "Integrations",
+        "title1": "Works with tools",
+        "title2": "you already use",
+        "items": [
+            {
+                "icon": "🐙",
+                "name": "GitHub Actions",
+                "detail": "Run tests on every PR"
+            },
+            {
+                "icon": "🦊",
+                "name": "GitLab CI",
+                "detail": "Pipeline integration"
+            },
+            {
+                "icon": "🎨",
+                "name": "Figma",
+                "detail": "Design-to-test automation"
+            },
+            {
+                "icon": "💬",
+                "name": "Slack",
+                "detail": "Instant failure alerts"
+            },
+            {
+                "icon": "📋",
+                "name": "Jira",
+                "detail": "Auto-create bug tickets"
+            },
+            {
+                "icon": "🔧",
+                "name": "Jenkins",
+                "detail": "CI/CD pipeline support"
+            },
+            {
+                "icon": "📊",
+                "name": "Datadog",
+                "detail": "Monitoring & observability"
+            },
+            {
+                "icon": "🌐",
+                "name": "Any Web App",
+                "detail": "React, Vue, Angular, etc."
+            }
+        ]
+    },
+    "cta": {
+        "title1": "Ready to fix QA",
+        "title2": "once and for all?",
+        "subtitle": "Join 500+ teams shipping faster with ProbeAI. Free plan available — no credit card required.",
+        "primary": "Start Free Trial",
+        "secondary": "Talk to Sales"
+    },
+    "footer": {
+        "links": [
+            "Documentation",
+            "Pricing",
+            "Changelog",
+            "Status",
+            "Privacy"
+        ],
+        "copy": "© 2025 ProbeAI. Built for QA teams that ship fast."
+    }
+}
