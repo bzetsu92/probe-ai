@@ -15,7 +15,7 @@ export function Footer() {
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
       transition={{ duration: 0.6 }}
-      className="px-10 py-12 flex flex-wrap items-center justify-between gap-6"
+      className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6"
       style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
     >
       <a href="#" className="flex items-center gap-2 no-underline">
@@ -31,15 +31,13 @@ export function Footer() {
         </span>
       </a>
 
-      <ul className="flex flex-wrap gap-8 list-none">
+      <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 list-none">
         {links.map((link, i) => (
           <li key={i}>
             <a
               href="#"
-              className="text-base no-underline transition-colors duration-200"
+              className="text-sm sm:text-base no-underline transition-colors duration-200 hover:text-[var(--text)]"
               style={{ color: "var(--text-dim)" }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text)")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-dim)")}
             >
               {link}
             </a>
@@ -48,7 +46,7 @@ export function Footer() {
       </ul>
 
       <span
-        className="text-sm"
+        className="text-xs sm:text-sm text-center sm:text-right"
         style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
       >
         {t("copy")}

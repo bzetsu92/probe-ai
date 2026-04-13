@@ -45,21 +45,20 @@ export function StatsBar() {
   return (
     <motion.div
       ref={ref as React.Ref<HTMLDivElement>}
-      className="py-10"
+      className="py-8 sm:py-10"
       style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", background: "var(--surface)" }}
     >
-      <div className="max-w-5xl mx-auto px-10 grid grid-cols-2 md:grid-cols-4">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-px">
         {stats.map((stat, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="px-8 py-6"
-            style={{ borderRight: i < 3 ? "1px solid var(--border)" : "none" }}
+            className="px-4 sm:px-6 lg:px-8 py-5 sm:py-6 text-center"
           >
             <div
-              className="text-4xl font-extrabold tracking-tight gradient-text"
+              className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight gradient-text"
               style={{ fontFamily: "var(--font-syne)" }}
             >
               {stat.raw !== null ? (
@@ -68,7 +67,7 @@ export function StatsBar() {
                 <span>{stat.display}</span>
               )}
             </div>
-            <div className="mt-2 text-base" style={{ color: "var(--text-dim)" }}>
+            <div className="mt-1.5 sm:mt-2 text-xs sm:text-base" style={{ color: "var(--text-dim)" }}>
               {stat.label}
             </div>
           </motion.div>

@@ -55,37 +55,31 @@
         "subtitle": "Test đáng tin cậy mà không cần bảo trì. Xây dựng cho đội nhóm phát hành nhanh.",
         "cards": [
             {
-                "icon": "✍️",
                 "title": "Viết test bằng ngôn ngữ tự nhiên",
                 "desc": "Không cần code. Mô tả bước test bằng ngôn ngữ tự nhiên hoặc YAML đơn giản. Cả đội — QA, PM, designer — đều viết test được.",
                 "tag": "Không cần code"
             },
             {
-                "icon": "🎨",
                 "title": "Figma thành test chỉ 1 click",
                 "desc": "Import thiết kế Figma và tự động tạo kịch bản test. Mọi màn hình, mọi luồng — được test trước khi ship code.",
                 "tag": "Design-first"
             },
             {
-                "icon": "🔍",
                 "title": "Phân tích lỗi thông minh",
                 "desc": "Khi test fail, ProbeAI cho biết tại sao — bug thật, lỗi môi trường, hay test lỗi thời — kèm ảnh chụp và bằng chứng.",
                 "tag": "AI-powered"
             },
             {
-                "icon": "🔄",
                 "title": "Test tự phục hồi",
                 "desc": "UI thay đổi? ProbeAI tự thích nghi. Không còn test vỡ mỗi sprint. Tập trung ship, không sửa selector.",
                 "tag": "Không bảo trì"
             },
             {
-                "icon": "⚡",
                 "title": "Chạy song song quy mô lớn",
                 "desc": "Chạy hàng trăm test cùng lúc. Toàn bộ test suite trong vài phút thay vì hàng giờ. Mở rộng không lo hạ tầng.",
                 "tag": "Siêu nhanh"
             },
             {
-                "icon": "🔌",
                 "title": "Tích hợp quy trình sẵn có",
                 "desc": "Kết nối GitHub Actions, GitLab CI, Jenkins hoặc bất kỳ CI/CD nào. Slack alert, Jira ticket, dashboard — có sẵn.",
                 "tag": "Plug & play"
@@ -192,42 +186,34 @@
         "title2": "bạn đang dùng",
         "items": [
             {
-                "icon": "🐙",
                 "name": "GitHub Actions",
                 "detail": "Chạy test mỗi PR"
             },
             {
-                "icon": "🦊",
                 "name": "GitLab CI",
                 "detail": "Tích hợp pipeline"
             },
             {
-                "icon": "🎨",
                 "name": "Figma",
                 "detail": "Tự động test từ thiết kế"
             },
             {
-                "icon": "💬",
                 "name": "Slack",
                 "detail": "Cảnh báo lỗi tức thì"
             },
             {
-                "icon": "📋",
                 "name": "Jira",
                 "detail": "Tự tạo ticket bug"
             },
             {
-                "icon": "🔧",
                 "name": "Jenkins",
                 "detail": "Hỗ trợ CI/CD pipeline"
             },
             {
-                "icon": "📊",
                 "name": "Datadog",
                 "detail": "Giám sát & quan sát"
             },
             {
-                "icon": "🌐",
                 "name": "Mọi Web App",
                 "detail": "React, Vue, Angular, v.v."
             }
