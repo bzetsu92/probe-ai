@@ -12,6 +12,18 @@ const LANG_LABELS: Record<Locale, string> = {
     ja: "JP",
 };
 
+function ProbeAILogo() {
+    return (
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="13" cy="13" r="12" stroke="var(--accent)" strokeWidth="1.5" strokeDasharray="3 2" opacity="0.35" />
+            <circle cx="13" cy="13" r="7" fill="rgba(0,229,255,0.08)" stroke="var(--accent)" strokeWidth="1.5" />
+            <circle cx="13" cy="13" r="3" fill="var(--accent)" />
+            <line x1="13" y1="6" x2="13" y2="3" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" />
+            <line x1="20" y1="13" x2="23" y2="13" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+        </svg>
+    );
+}
+
 export function Navbar() {
     const t = useTranslations("nav");
     const locale = useLocale() as Locale;
@@ -44,17 +56,15 @@ export function Navbar() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "backdrop-blur-xl bg-[rgba(4,5,10,0.88)] border-b border-white/[0.06]"
+            className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 ${scrolled
+                    ? "backdrop-blur-xl bg-[rgba(4,5,10,0.90)] border-b border-white/[0.06]"
                     : "bg-transparent"
                 }`}
+        style={{ pointerEvents: "auto" }}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-2.5 no-underline shrink-0">
-                    <span
-                        className="w-2 h-2 rounded-full pulse-dot"
-                        style={{ background: "var(--accent)", boxShadow: "0 0 12px var(--accent)" }}
-                    />
+                <a href="#" className="flex items-center gap-2.5 no-underline shrink-0 group">
+                    <ProbeAILogo />
                     <span
                         className="text-xl font-extrabold tracking-tight"
                         style={{ fontFamily: "var(--font-syne)", color: "var(--text)" }}
@@ -63,12 +73,13 @@ export function Navbar() {
                     </span>
                 </a>
 
+                {/* Desktop nav links */}
                 <div className="hidden lg:flex items-center gap-1">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline hover:bg-white/[0.04]"
+                            className="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline hover:bg-white/[0.05]"
                             style={{ fontFamily: "var(--font-sans)", color: "var(--text-dim)" }}
                             onMouseEnter={(e) => {
                                 (e.currentTarget as HTMLElement).style.color = "var(--text)";
@@ -91,13 +102,17 @@ export function Navbar() {
                             <button
                                 key={loc}
                                 onClick={() => switchLocale(loc)}
-                                className="px-2.5 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer hover:bg-white/[0.04]"
+                                className="px-4 py-2.5 text-xs font-semibold tracking-wide transition-all duration-200 hover:bg-white/[0.06] select-none"
                                 style={{
                                     fontFamily: "var(--font-mono)",
-                                    background: loc === locale ? "rgba(0,229,255,0.12)" : "transparent",
+                                    background: loc === locale ? "rgba(0,229,255,0.14)" : "transparent",
                                     color: loc === locale ? "var(--accent)" : "var(--text-muted)",
                                     border: "none",
                                     borderRight: idx < locales.length - 1 ? "1px solid var(--border)" : "none",
+                                    cursor: "none",
+                                    pointerEvents: "auto",
+                                    position: "relative",
+                                    zIndex: 10,
                                 }}
                             >
                                 {LANG_LABELS[loc]}
@@ -107,26 +122,27 @@ export function Navbar() {
 
                     <a
                         href="#cta"
-                        className="px-5 py-2 rounded-lg text-sm font-bold no-underline transition-all duration-200 hover:translate-y-[-1px]"
+                        className="btn-shimmer px-5 py-2 rounded-lg text-sm font-bold no-underline transition-all duration-200 hover:translate-y-[-1px]"
                         style={{
                             fontFamily: "var(--font-syne)",
                             background: "var(--accent)",
                             color: "#000",
-                            boxShadow: "0 0 20px rgba(0,229,255,0.15)",
+                            boxShadow: "0 0 20px rgba(0,229,255,0.18)",
                         }}
                         onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(0,229,255,0.35)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 36px rgba(0,229,255,0.38)";
                         }}
                         onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(0,229,255,0.15)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(0,229,255,0.18)";
                         }}
                     >
                         {t("getStarted")} →
                     </a>
                 </div>
 
+                {/* Hamburger button — fixed color */}
                 <button
-                    className="lg:hidden flex flex-col justify-center items-center gap-1.5 p-2 cursor-pointer rounded-lg hover:bg-white/[0.04] transition-colors"
+                    className="lg:hidden flex flex-col justify-center items-center gap-[5px] p-2 cursor-pointer rounded-lg hover:bg-white/[0.05] transition-colors"
                     onClick={() => setMenuOpen(!menuOpen)}
                     style={{ background: "none", border: "none" }}
                     aria-label="Toggle menu"
@@ -134,11 +150,11 @@ export function Navbar() {
                     {[0, 1, 2].map((i) => (
                         <motion.span
                             key={i}
-                            className="block h-0.5 w-5 rounded"
-                            style={{ background: "#fbbf24" }}
+                            className="block h-[1.5px] w-5 rounded-full"
+                            style={{ background: "var(--text-dim)" }}
                             animate={{
                                 rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0,
-                                y: menuOpen && i === 0 ? 8 : menuOpen && i === 2 ? -8 : 0,
+                                y: menuOpen && i === 0 ? 6.5 : menuOpen && i === 2 ? -6.5 : 0,
                                 opacity: menuOpen && i === 1 ? 0 : 1,
                             }}
                             transition={{ duration: 0.2 }}
@@ -156,7 +172,7 @@ export function Navbar() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="lg:hidden overflow-hidden backdrop-blur-xl"
                         style={{
-                            background: "rgba(4,5,10,0.95)",
+                            background: "rgba(4,5,10,0.97)",
                             borderBottom: "1px solid var(--border)",
                         }}
                     >
@@ -185,13 +201,15 @@ export function Navbar() {
                                         <button
                                             key={loc}
                                             onClick={() => { switchLocale(loc); setMenuOpen(false); }}
-                                            className="px-3 py-2 text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer hover:bg-white/[0.04]"
+                                            className="px-4 py-3 text-sm font-semibold tracking-wide transition-all duration-200 hover:bg-white/[0.06] select-none"
                                             style={{
                                                 fontFamily: "var(--font-mono)",
-                                                background: loc === locale ? "rgba(0,229,255,0.12)" : "transparent",
+                                                background: loc === locale ? "rgba(0,229,255,0.14)" : "transparent",
                                                 color: loc === locale ? "var(--accent)" : "var(--text-dim)",
                                                 border: "none",
                                                 borderRight: idx < locales.length - 1 ? "1px solid var(--border)" : "none",
+                                                cursor: "none",
+                                                pointerEvents: "auto",
                                             }}
                                         >
                                             {LANG_LABELS[loc]}
@@ -201,12 +219,12 @@ export function Navbar() {
                                 <a
                                     href="#cta"
                                     onClick={() => setMenuOpen(false)}
-                                    className="px-5 py-3 rounded-lg text-base font-bold no-underline text-center transition-all duration-200 active:scale-[0.98]"
+                                    className="btn-shimmer px-5 py-3 rounded-lg text-base font-bold no-underline text-center transition-all duration-200 active:scale-[0.98]"
                                     style={{
                                         fontFamily: "var(--font-syne)",
                                         background: "var(--accent)",
                                         color: "#000",
-                                        boxShadow: "0 0 20px rgba(0,229,255,0.15)",
+                                        boxShadow: "0 0 20px rgba(0,229,255,0.18)",
                                     }}
                                 >
                                     {t("getStarted")} →
