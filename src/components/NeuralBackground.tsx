@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* ─────────────────────────────────────────
    Neural Network background canvas
@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
    – edges draw when nodes come within range
    – a "signal" pulse travels along edges
    – everything is very subtle (low alpha)
+   DISABLED ON MOBILE/TOUCH DEVICES for performance
 ───────────────────────────────────────── */
 
 interface Node {
@@ -43,8 +44,20 @@ function randomBetween(a: number, b: number) {
 
 export function NeuralBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
+        const checkMobile = () => {
+            setEnabled(window.innerWidth > 768 && !window.matchMedia("(pointer: coarse)").matches);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    useEffect(() => {
+        if (!enabled) return;
+        
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext("2d");
@@ -173,8 +186,11 @@ export function NeuralBackground() {
         return () => {
             cancelAnimationFrame(rafId);
             window.removeEventListener("resize", onResize);
+            window.removeEventListener("resize", onResize);
         };
-    }, []);
+    }, [enabled]);
+
+    if (!enabled) return null;
 
     return (
         <canvas

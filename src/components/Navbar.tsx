@@ -125,15 +125,15 @@ export function Navbar() {
                         className="btn-shimmer px-5 py-2 rounded-lg text-sm font-bold no-underline transition-all duration-200 hover:translate-y-[-1px]"
                         style={{
                             fontFamily: "var(--font-syne)",
-                            background: "var(--accent)",
+                            background: "linear-gradient(135deg, var(--accent-yellow), var(--accent-orange))",
                             color: "#000",
-                            boxShadow: "0 0 20px rgba(0,229,255,0.18)",
+                            boxShadow: "0 0 20px rgba(255,189,46,0.15)",
                         }}
                         onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 36px rgba(0,229,255,0.38)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(255,189,46,0.35)";
                         }}
                         onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(0,229,255,0.18)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(255,189,46,0.15)";
                         }}
                     >
                         {t("getStarted")} →
@@ -222,9 +222,9 @@ export function Navbar() {
                                     className="btn-shimmer px-5 py-3 rounded-lg text-base font-bold no-underline text-center transition-all duration-200 active:scale-[0.98]"
                                     style={{
                                         fontFamily: "var(--font-syne)",
-                                        background: "var(--accent)",
+                                        background: "linear-gradient(135deg, var(--accent-yellow), var(--accent-orange))",
                                         color: "#000",
-                                        boxShadow: "0 0 20px rgba(0,229,255,0.18)",
+                                        boxShadow: "0 0 20px rgba(255,189,46,0.15)",
                                     }}
                                 >
                                     {t("getStarted")} →

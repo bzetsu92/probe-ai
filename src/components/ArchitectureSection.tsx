@@ -77,7 +77,6 @@ export function ArchitectureSection() {
             </div>
           </motion.div>
 
-          {/* Right column — Layers */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, type Variants } from "framer-motion";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
 /* ─────────────────────────────────────────
    Typewriter hook
@@ -147,6 +147,61 @@ function LiveBadge({ text, color, delay, x, y }: typeof LIVE_BADGES[0]) {
     );
 }
 
+/* ─────────────────────────────────────────
+   Floating particles for Hero
+───────────────────────────────────────── */
+function HeroParticles() {
+    const [enabled, setEnabled] = useState(false);
+
+    useEffect(() => {
+        if (window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(pointer: coarse)").matches) return;
+        setEnabled(true);
+    }, []);
+
+    const particles = useMemo(() => {
+        const colors = [
+            "rgba(0,229,255,0.75)",
+            "rgba(123,97,255,0.7)",
+            "rgba(255,189,46,0.65)", // yellow accent
+            "rgba(255,95,87,0.65)",  // orange accent
+        ];
+        return Array.from({ length: 35 }, (_, i) => ({
+            id: i,
+            x: Math.random() * 100, // 0-100% width
+            size: Math.random() * 10 + 1.5,
+            color: colors[i % colors.length],
+            duration: Math.random() * 15 + 15, // float time 15-30s
+            delay: Math.random() * -30, // Randomly out of sync start
+            dx: (Math.random() - 0.5) * 80, // slight drift left/right
+        }));
+    }, []);
+
+    if (!enabled) return null;
+
+    return (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
+            {particles.map((p) => (
+                <div
+                    key={p.id}
+                    className="absolute rounded-full"
+                    style={{
+                        left: `${p.x}%`,
+                        bottom: `-5%`,
+                        width: p.size,
+                        height: p.size,
+                        background: p.color,
+                        boxShadow: `0 0 ${p.size * 3.5}px ${p.color}`,
+                        animation: `hero-particle-float ${p.duration}s linear infinite`,
+                        animationDelay: `${p.delay}s`,
+                        // @ts-expect-error custom property for keyframes
+                        "--dx": `${p.dx}px`,
+                    }}
+                />
+            ))}
+        </div>
+    );
+}
+
 /* Mouse spotlight is handled globally by PageSpotlight in layout.tsx */
 
 /* ─────────────────────────────────────────
@@ -165,7 +220,6 @@ export function HeroSection() {
             className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-16 overflow-hidden"
             id="hero"
         >
-            {/* Background orbs */}
             <div
                 className="absolute pointer-events-none rounded-full"
                 style={{
@@ -187,7 +241,10 @@ export function HeroSection() {
                 }}
             />
 
+            {/* Grid background & particles */}
             <div className="absolute inset-0 grid-bg pointer-events-none" style={{ zIndex: 1 }} />
+            <HeroParticles />
+
             {LIVE_BADGES.map((badge) => (
                 <LiveBadge key={badge.text} {...badge} />
             ))}
@@ -208,10 +265,8 @@ export function HeroSection() {
                     {t("badge")}
                 </motion.div>
 
-                {/* Headline */}
                 <AnimatedHeadline line1={t("title1")} line2={t("title2")} />
 
-                {/* Subtitle — typewriter */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -225,7 +280,6 @@ export function HeroSection() {
                     )}
                 </motion.div>
 
-                {/* CTAs */}
                 <motion.div
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -237,15 +291,15 @@ export function HeroSection() {
                         className="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm sm:text-base font-bold no-underline transition-all duration-300 hover:translate-y-[-2px] active:scale-[0.98]"
                         style={{
                             fontFamily: "var(--font-syne)",
-                            background: "var(--accent)",
+                            background: "linear-gradient(135deg, var(--accent-yellow), var(--accent-orange))",
                             color: "#000",
-                            boxShadow: "0 0 40px rgba(0,229,255,0.35)",
+                            boxShadow: "0 0 40px rgba(255,189,46,0.25)",
                         }}
                         onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 70px rgba(0,229,255,0.60)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 65px rgba(255,189,46,0.55)";
                         }}
                         onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(0,229,255,0.35)";
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(255,189,46,0.25)";
                         }}
                     >
                         {t("cta")} →
@@ -268,7 +322,6 @@ export function HeroSection() {
                     </a>
                 </motion.div>
 
-                {/* Social proof */}
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}

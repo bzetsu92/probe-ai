@@ -78,7 +78,6 @@ export function HowItWorksSection() {
                                             border: "1px solid rgba(255,255,255,0.07)",
                                         }}
                                     >
-                                        {/* Terminal header */}
                                         <div className="terminal-header">
                                             <span className="terminal-dot" style={{ background: "#ff5f57" }} />
                                             <span className="terminal-dot" style={{ background: "#febc2e" }} />
@@ -90,7 +89,6 @@ export function HowItWorksSection() {
                                                 probe-config.yaml
                                             </span>
                                         </div>
-                                        {/* Code body */}
                                         <div
                                             className="p-4 sm:p-5 text-xs sm:text-sm leading-relaxed whitespace-pre overflow-x-auto"
                                             style={{

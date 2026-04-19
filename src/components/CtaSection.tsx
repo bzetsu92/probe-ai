@@ -120,13 +120,11 @@ function RotatingBorderCard({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="relative" style={{ padding: "2px", borderRadius: "20px" }}>
-            {/* Canvas draws the animated border */}
             <canvas
                 ref={canvasRef}
                 className="absolute inset-0 pointer-events-none"
                 style={{ borderRadius: "20px", opacity: 0.85 }}
             />
-            {/* Static fallback border underneath */}
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -134,7 +132,6 @@ function RotatingBorderCard({ children }: { children: React.ReactNode }) {
                     border: "1px solid rgba(123,97,255,0.18)",
                 }}
             />
-            {/* Inner card */}
             <div
                 className="relative"
                 style={{
@@ -180,7 +177,6 @@ export function CtaSection() {
     const t = useTranslations("cta");
     const { ref, inView } = useInView();
 
-    /* Stable particle list — memoised so it doesn't re-randomise */
     const particles = useMemo<Particle[]>(() => {
         const colors = [
             "rgba(0,229,255,0.7)",
@@ -202,7 +198,6 @@ export function CtaSection() {
     return (
         <section id="cta" className="py-20 sm:py-28 relative overflow-hidden">
 
-            {/* ── Deep background orbs ── */}
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                 style={{
@@ -222,7 +217,6 @@ export function CtaSection() {
                 }}
             />
 
-            {/* ── Pulsing glow ring behind the card ── */}
             <div
                 className="cta-glow-ring"
                 style={{
@@ -245,7 +239,6 @@ export function CtaSection() {
                 }}
             />
 
-            {/* ── Main card ── */}
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref as React.Ref<HTMLDivElement>}>
                 <motion.div
                     initial={{ opacity: 0, y: 28 }}
@@ -253,10 +246,8 @@ export function CtaSection() {
                     transition={{ duration: 0.7 }}
                 >
                     <RotatingBorderCard>
-                        {/* Floating particles inside card */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <FloatingParticles particles={particles} />
-                            {/* Subtle radial highlight top-center */}
                             <div
                                 className="absolute -top-20 left-1/2 -translate-x-1/2 pointer-events-none"
                                 style={{
@@ -302,15 +293,15 @@ export function CtaSection() {
                                     className="btn-shimmer inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 rounded-xl text-sm sm:text-base font-bold no-underline transition-all duration-200 hover:translate-y-[-2px] active:scale-[0.98]"
                                     style={{
                                         fontFamily: "var(--font-syne)",
-                                        background: "var(--accent)",
+                                        background: "linear-gradient(135deg, var(--accent-yellow), var(--accent-orange))",
                                         color: "#000",
-                                        boxShadow: "0 0 32px rgba(0,229,255,0.28)",
+                                        boxShadow: "0 0 32px rgba(255,189,46,0.22)",
                                     }}
                                     onMouseEnter={(e) => {
-                                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 60px rgba(0,229,255,0.55)";
+                                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 56px rgba(255,189,46,0.45)";
                                     }}
                                     onMouseLeave={(e) => {
-                                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(0,229,255,0.28)";
+                                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(255,189,46,0.22)";
                                     }}
                                 >
                                     {t("primary")} →
@@ -330,7 +321,6 @@ export function CtaSection() {
                                 </a>
                             </motion.div>
 
-                            {/* Trust badges */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={inView ? { opacity: 1 } : {}}
